@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "149122129039",
+    "project_id": "sliding-puzzle-83b0a",
+    "storage_bucket": "sliding-puzzle-83b0a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:149122129039:android:6d65d8bc0a0e211eb0a4fa",
+        "android_client_info": {
+          "package_name": "com.example.testing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "149122129039-l24cjuahp8jfbn4lgma0qahe5hv0n5n6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIrZ0M4o-y54_UQlw7kyrVWRthwrNKNx0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "149122129039-l24cjuahp8jfbn4lgma0qahe5hv0n5n6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
