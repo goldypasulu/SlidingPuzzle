@@ -19,7 +19,7 @@ class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
-        setTitle("Leaderboard")
+        setTitle("Daftar Pemain")
 
         recyclerView = findViewById(R.id.rvData)
         recyclerView.layoutManager = LinearLayoutManager(this)
