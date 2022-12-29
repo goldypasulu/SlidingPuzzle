@@ -761,7 +761,10 @@ class MainActivity : AppCompatActivity() {
         while(loop){
             //value.shuffle()
 
-            //dari sini tambahan baru
+            /* Line 764 - 796 adalah tambahan untuk random number,
+            jika ingin dikembalikan ke 1-8 tinggal di comment line 764-796.
+            Lalu line 762 di UnComment */
+
             //random value
             for (i in 0..8){
                 if(i != 8) {
