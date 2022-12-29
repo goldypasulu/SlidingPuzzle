@@ -25,12 +25,12 @@ class InputNameActivity : AppCompatActivity() {
         var _btnLeaderboard = findViewById<Button>(R.id.btnLeadeboard)
 
         val tempBestTime = "Not Finished"
-        var playerName = _etInputName.text
+        val playerName = _etInputName.text
 
         //initiate Firestore
         val dbFS = FirebaseFirestore.getInstance()
-        val newDocRef = dbFS.collection("data_time").document()
-        val documentId = newDocRef.id
+        val newDocRef = dbFS.collection("data_time")
+        //val documentId = newDocRef.id
 
         _etInputName.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
@@ -54,18 +54,20 @@ class InputNameActivity : AppCompatActivity() {
 
             Toast.makeText(this, "Registrasi Berhasil", Toast.LENGTH_SHORT).show()
 
+            val newDocRef2 = newDocRef.document("${playerName.toString().lowercase()}")
+
             val dataUser = User(
-                playerName.toString(),
+                playerName.toString().lowercase(),
                 tempBestTime
             )
 
             arData?.add(dataUser)
 
-            newDocRef.set(dataUser)
+            newDocRef2.set(dataUser)
 
             val eIntent = Intent(this@InputNameActivity, MainActivity::class.java).apply {
                 putExtra("DATA", arData)
-                putExtra("DOC_ID", documentId)
+                //putExtra("DOC_ID", documentId)
             }
 
             startActivity(eIntent)

@@ -79,14 +79,16 @@ class MainActivity : AppCompatActivity() {
         var playerName = ""
 
         if (intent.extras!=null) {
+
             if (intent.getParcelableArrayListExtra<User>("DATA") != null) {
                 arData = (intent.getParcelableArrayListExtra<User>("DATA") as ArrayList<User>)
             }
-            documentId = (intent.getStringExtra("DOC_ID") as String)
+            //documentId = (intent.getStringExtra("DOC_ID") as String)
+
         }
 
-        playerName = arData!![0].nama!!
-        title = "Selamat bermain $playerName" //SET TITLE BAR
+        documentId = arData!![0].nama!!
+        title = "Selamat bermain $documentId" //SET TITLE BAR
 
         //buat puzzlenya
         var _button : Button = findViewById(R.id.button)
