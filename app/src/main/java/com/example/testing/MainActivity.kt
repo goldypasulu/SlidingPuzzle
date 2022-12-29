@@ -745,7 +745,7 @@ class MainActivity : AppCompatActivity() {
             alert_dialog()
         }
 
-        _textView.text = Arrays.toString(num)
+        _textView.text = Arrays.toString(win)
         _textView2.text = Arrays.toString(value)
     }
 
@@ -757,7 +757,39 @@ class MainActivity : AppCompatActivity() {
         var loop : Boolean = true
         var count : Int = 0
         while(loop){
+            //value.shuffle()
+
+            //dari sini tambahan baru
+            //random value
+            for (i in 0..8){
+                if(i != 8) {
+                    val rnds = (1..100).random()
+                    value[i] = rnds
+                } else if (i == 8){
+                    value[i] = 0
+                }
+            }
+
+            for (i in 0..8){
+                if(i != 0) {
+                    num[i] = 1
+                    win[i] = value[i]
+                } else if (i == 0){
+                    num[i] = 0
+                    win[i] = value[i]
+                }
+            }
+
             value.shuffle()
+            win.sort()
+            //rearrange win nya
+            for (i in 0..7){
+                win[i] = win[i+1]
+            }
+            //0 di akhir array
+            win[8] = 0
+            //dari sini tambahan
+
             //notes shuffle: shuffle nya bakal sama terus pada saat di run pertama kali
             //kalo reset game, bakal beda kok
             count = 0
