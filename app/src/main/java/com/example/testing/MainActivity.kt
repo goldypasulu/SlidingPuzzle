@@ -88,7 +88,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         documentId = arData!![0].nama!!
-        title = "Selamat bermain $documentId" //SET TITLE BAR
+        title = "Selamat bermain $documentId (Random Number)" //SET TITLE BAR
 
         //buat puzzlenya
         var _button : Button = findViewById(R.id.button)

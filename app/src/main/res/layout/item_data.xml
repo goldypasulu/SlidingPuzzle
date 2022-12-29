@@ -39,9 +39,9 @@
             android:text="@string/time"
             android:textColor="#33691E"
             android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf=""
+            app:layout_constraintEnd_toStartOf="@id/btnDelete"
             app:layout_constraintTop_toTopOf="@+id/tvNama"
-            tools:layout_editor_absoluteX="218dp" />
+            android:layout_marginEnd="20sp"/>
 
         <TextView
             android:id="@+id/btnDelete"
@@ -49,7 +49,8 @@
             android:layout_width="wrap_content"
             android:background="@drawable/ic_baseline_delete_24"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTime"
+            android:layout_marginEnd="10sp"
             />
 
         <Button

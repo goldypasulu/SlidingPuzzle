@@ -3,6 +3,7 @@ package com.example.testing
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,7 +20,7 @@ class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
-        setTitle("Leaderboard")
+        setTitle("Leaderboard (Random Number)")
 
         recyclerView = findViewById(R.id.rvData)
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -27,7 +28,6 @@ class MainActivity2 : AppCompatActivity() {
         adapterData_ = adapterData(userArrayList)
         recyclerView.adapter = adapterData_
         dbFS = FirebaseFirestore.getInstance()
-        val query = dbFS.collection("data_time").orderBy("time",Query.Direction.ASCENDING)
         DataChangeListener()
     }
 

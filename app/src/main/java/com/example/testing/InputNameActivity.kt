@@ -18,7 +18,7 @@ class InputNameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_input_name)
-        setTitle("Sliding Puzzle")
+        setTitle("Sliding Puzzle (Random Number)")
 
         var _etInputName = findViewById<EditText>(R.id.etInputName)
         var _btnInputName = findViewById<Button>(R.id.btnInputName)
