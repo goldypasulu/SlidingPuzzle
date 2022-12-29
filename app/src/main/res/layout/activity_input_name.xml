@@ -7,17 +7,26 @@
     android:layout_height="match_parent"
     tools:context=".InputNameActivity">
 
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sliding_puzzle_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="-50dp"/>
+
     <EditText
         android:id="@+id/etInputName"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="0dp"
         android:background="@drawable/search_background"
         android:hint="Input your name"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivLogo"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"/>
 
