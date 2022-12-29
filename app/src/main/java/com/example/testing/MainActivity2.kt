@@ -19,26 +19,26 @@ class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
-        setTitle("Daftar Pemain")
+        setTitle("Leaderboard")
 
         recyclerView = findViewById(R.id.rvData)
         recyclerView.layoutManager = LinearLayoutManager(this)
         userArrayList = arrayListOf()
         adapterData_ = adapterData(userArrayList)
         recyclerView.adapter = adapterData_
-
+        dbFS = FirebaseFirestore.getInstance()
+        val query = dbFS.collection("data_time").orderBy("time",Query.Direction.ASCENDING)
         DataChangeListener()
     }
 
     //Get data from firestore
     private fun DataChangeListener(){
         dbFS = FirebaseFirestore.getInstance()
-        dbFS.collection("data_time").
-        addSnapshotListener(object : EventListener<QuerySnapshot>{
+        val query = dbFS.collection("data_time").orderBy("time",Query.Direction.ASCENDING)
+        query.addSnapshotListener(object : EventListener<QuerySnapshot>{
             override fun onEvent(
                 value: QuerySnapshot?,
-                error: FirebaseFirestoreException?
-            )
+                error: FirebaseFirestoreException?)
             {
                 if (error != null){
                     Log.e("Firestore Error", error.message.toString())
@@ -55,6 +55,7 @@ class MainActivity2 : AppCompatActivity() {
                 adapterData_.notifyDataSetChanged()
 
             }
+
         })
     }
 

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/theme3"
     tools:context=".MainActivity">
 
     <TextView
@@ -18,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    // 2 button sama text view diatas atribut buat time
+<!--    2 button sama text view diatas atribut buat time-->
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonStartStop"
